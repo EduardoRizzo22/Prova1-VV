@@ -1,0 +1,49 @@
+
+CASOS DE TESTE PARA A FUNÇÃO
+
+Caso 1: Total menor que R$ 1.000,00 com desconto aplicado
+Descrição: Verifica o cálculo correto do total com desconto percentual, sem aplicar o desconto adicional.
+
+Entrada: Produto com price = 100.00, quantity = 2, e discount = 10%.
+Saída Esperada: R$ 180,00.
+
+
+
+Caso 2: Total igual ou maior que R$ 1.000,00 com desconto adicional
+Descrição: Verifica a aplicação do desconto adicional de R$ 100,00 para valores acima de R$ 1.000,00.
+
+Entrada: Produto com price = 600.00, quantity = 2, e discount = 5%.
+Saída Esperada: R$ 1.040,00.
+
+
+
+Caso 3: Produto com preço negativo
+Descrição: Garante que produtos com preço negativo gerem uma exceção.
+
+Entrada: Produto com price = -100.00, quantity = 2.
+Saída Esperada: Exceção InvalidProductException.
+
+
+
+Caso 4: Produto com quantidade negativa
+Descrição: Garante que produtos com quantidade negativa gerem uma exceção.
+
+Entrada: Produto com price = 100.00, quantity = -1.
+Saída Esperada: Exceção InvalidProductException.
+
+
+
+Caso 5: Fatura com múltiplos produtos
+Descrição: Verifica o cálculo correto do total com vários produtos e desconto percentual.
+
+Entrada: Dois produtos: (1) price = 300.00, quantity = 2; (2) price = 200.00, quantity = 2.
+Desconto: 20%.
+Saída Esperada: R$ 960,00.
+
+
+
+Caso 6: Total com desconto percentual sem atingir R$ 1.000,00
+Descrição: Garante que o desconto adicional não seja aplicado quando o total bruto for menor que R$ 1.000,00.
+
+Entrada: Produto com price = 500.00, quantity = 2, e discount = 10%.
+Saída Esperada: R$ 800,00.
